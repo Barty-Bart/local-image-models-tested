@@ -1,0 +1,328 @@
+{
+ "76": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "I2_cat_s1001.png"
+  },
+  "_meta": {
+   "title": "LoadImage"
+  }
+ },
+ "9": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "filename_prefix": "vramtest/uncapped/flux2_klein_9b_fp8/M1_cat_mountain_s2002",
+   "images": [
+    "75:65",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SaveImage"
+  }
+ },
+ "75:61": {
+  "class_type": "KSamplerSelect",
+  "inputs": {
+   "sampler_name": "euler"
+  },
+  "_meta": {
+   "title": "KSamplerSelect"
+  }
+ },
+ "75:64": {
+  "class_type": "SamplerCustomAdvanced",
+  "inputs": {
+   "noise": [
+    "75:73",
+    0
+   ],
+   "guider": [
+    "75:63",
+    0
+   ],
+   "sampler": [
+    "75:61",
+    0
+   ],
+   "sigmas": [
+    "75:62",
+    0
+   ],
+   "latent_image": [
+    "75:66",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SamplerCustomAdvanced"
+  }
+ },
+ "75:65": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "75:64",
+    0
+   ],
+   "vae": [
+    "75:72",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAEDecode"
+  }
+ },
+ "75:73": {
+  "class_type": "RandomNoise",
+  "inputs": {
+   "noise_seed": 2002
+  },
+  "_meta": {
+   "title": "RandomNoise"
+  }
+ },
+ "75:70": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "flux-2-klein-9b-fp8.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "UNETLoader"
+  }
+ },
+ "75:71": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen_3_8b_fp8mixed.safetensors",
+   "type": "flux2",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "CLIPLoader"
+  }
+ },
+ "75:66": {
+  "class_type": "EmptyFlux2LatentImage",
+  "inputs": {
+   "width": [
+    "75:99",
+    0
+   ],
+   "height": [
+    "75:99",
+    1
+   ],
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "EmptyFlux2LatentImage"
+  }
+ },
+ "75:63": {
+  "class_type": "CFGGuider",
+  "inputs": {
+   "cfg": 1,
+   "model": [
+    "75:70",
+    0
+   ],
+   "positive": [
+    "75:125+r2",
+    0
+   ],
+   "negative": [
+    "75:123+r2",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "CFGGuider"
+  }
+ },
+ "75:62": {
+  "class_type": "Flux2Scheduler",
+  "inputs": {
+   "steps": 4,
+   "width": [
+    "75:99",
+    0
+   ],
+   "height": [
+    "75:99",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "Flux2Scheduler"
+  }
+ },
+ "75:99": {
+  "class_type": "GetImageSize",
+  "inputs": {
+   "image": [
+    "75:80",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "GetImageSize"
+  }
+ },
+ "75:123": {
+  "class_type": "ReferenceLatent",
+  "inputs": {
+   "conditioning": [
+    "75:82",
+    0
+   ],
+   "latent": [
+    "75:124",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ReferenceLatent"
+  }
+ },
+ "75:80": {
+  "class_type": "ImageScaleToTotalPixels",
+  "inputs": {
+   "upscale_method": "nearest-exact",
+   "megapixels": 1,
+   "resolution_steps": 1,
+   "image": [
+    "76",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ImageScaleToTotalPixels"
+  }
+ },
+ "75:72": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "full_encoder_small_decoder.safetensors"
+  },
+  "_meta": {
+   "title": "VAELoader"
+  }
+ },
+ "75:125": {
+  "class_type": "ReferenceLatent",
+  "inputs": {
+   "conditioning": [
+    "75:74",
+    0
+   ],
+   "latent": [
+    "75:124",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ReferenceLatent"
+  }
+ },
+ "75:74": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "Put the cat from image 1 sitting on the rock in the mountain valley from image 2.",
+   "clip": [
+    "75:71",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "CLIP Text Encode (Positive Prompt)"
+  }
+ },
+ "75:82": {
+  "class_type": "ConditioningZeroOut",
+  "inputs": {
+   "conditioning": [
+    "75:74",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ConditioningZeroOut"
+  }
+ },
+ "75:124": {
+  "class_type": "VAEEncode",
+  "inputs": {
+   "pixels": [
+    "75:80",
+    0
+   ],
+   "vae": [
+    "75:72",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAEEncode"
+  }
+ },
+ "902s": {
+  "class_type": "ImageScaleToTotalPixels",
+  "inputs": {
+   "upscale_method": "nearest-exact",
+   "megapixels": 1,
+   "resolution_steps": 1,
+   "image": [
+    "902",
+    0
+   ]
+  }
+ },
+ "902e": {
+  "class_type": "VAEEncode",
+  "inputs": {
+   "pixels": [
+    "902s",
+    0
+   ],
+   "vae": [
+    "75:72",
+    0
+   ]
+  }
+ },
+ "75:123+r2": {
+  "class_type": "ReferenceLatent",
+  "inputs": {
+   "conditioning": [
+    "75:123",
+    0
+   ],
+   "latent": [
+    "902e",
+    0
+   ]
+  }
+ },
+ "75:125+r2": {
+  "class_type": "ReferenceLatent",
+  "inputs": {
+   "conditioning": [
+    "75:125",
+    0
+   ],
+   "latent": [
+    "902e",
+    0
+   ]
+  }
+ },
+ "902": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "I3_mountain_s1001.png"
+  }
+ }
+}

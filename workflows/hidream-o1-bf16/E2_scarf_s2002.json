@@ -1,0 +1,252 @@
+{
+ "108": {
+  "class_type": "SamplerCustom",
+  "inputs": {
+   "add_noise": true,
+   "noise_seed": 2002,
+   "cfg": 5,
+   "model": [
+    "232",
+    0
+   ],
+   "positive": [
+    "104",
+    0
+   ],
+   "negative": [
+    "104",
+    1
+   ],
+   "sampler": [
+    "230",
+    0
+   ],
+   "sigmas": [
+    "112",
+    0
+   ],
+   "latent_image": [
+    "172",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SamplerCustom"
+  }
+ },
+ "112": {
+  "class_type": "BasicScheduler",
+  "inputs": {
+   "scheduler": "normal",
+   "steps": 40,
+   "denoise": 1,
+   "model": [
+    "124",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "BasicScheduler"
+  }
+ },
+ "6": {
+  "class_type": "CheckpointLoaderSimple",
+  "inputs": {
+   "ckpt_name": "hidream_o1_image_bf16.safetensors"
+  },
+  "_meta": {
+   "title": "CheckpointLoaderSimple"
+  }
+ },
+ "124": {
+  "class_type": "ModelNoiseScale",
+  "inputs": {
+   "noise_scale": 8,
+   "model": [
+    "6",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ModelNoiseScale"
+  }
+ },
+ "104": {
+  "class_type": "HiDreamO1ReferenceImages",
+  "inputs": {
+   "positive": [
+    "110",
+    0
+   ],
+   "negative": [
+    "188",
+    0
+   ],
+   "images.image_1": [
+    "213",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "HiDreamO1ReferenceImages"
+  }
+ },
+ "110": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": [
+    "171",
+    0
+   ],
+   "clip": [
+    "6",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "CLIPTextEncode"
+  }
+ },
+ "105": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "108",
+    0
+   ],
+   "vae": [
+    "6",
+    2
+   ]
+  },
+  "_meta": {
+   "title": "VAEDecode"
+  }
+ },
+ "157": {
+  "class_type": "GetImageSize",
+  "inputs": {
+   "image": [
+    "213",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "GetImageSize"
+  }
+ },
+ "188": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "",
+   "clip": [
+    "6",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "CLIPTextEncode"
+  }
+ },
+ "213": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "I2_cat_s1001.png"
+  },
+  "_meta": {
+   "title": "LoadImage"
+  }
+ },
+ "218": {
+  "class_type": "ComfyMathExpression",
+  "inputs": {
+   "expression": "floor(a/32)*32",
+   "values.a": [
+    "157",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ComfyMathExpression"
+  }
+ },
+ "219": {
+  "class_type": "ComfyMathExpression",
+  "inputs": {
+   "expression": "floor(a/32)*32",
+   "values.a": [
+    "157",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "ComfyMathExpression"
+  }
+ },
+ "172": {
+  "class_type": "EmptyHiDreamO1LatentImage",
+  "inputs": {
+   "width": [
+    "218",
+    1
+   ],
+   "height": [
+    "219",
+    1
+   ],
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "EmptyHiDreamO1LatentImage"
+  }
+ },
+ "171": {
+  "class_type": "PrimitiveStringMultiline",
+  "inputs": {
+   "value": "Make the cat wear a small red knitted scarf. Change nothing else."
+  },
+  "_meta": {
+   "title": "User Prompt"
+  }
+ },
+ "227": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "filename_prefix": "vramtest/uncapped/hidream_o1_bf16/E2_scarf_s2002",
+   "images": [
+    "105",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SaveImage"
+  }
+ },
+ "230": {
+  "class_type": "KSamplerSelect",
+  "inputs": {
+   "sampler_name": "dpmpp_2m_sde_gpu"
+  },
+  "_meta": {
+   "title": "KSamplerSelect"
+  }
+ },
+ "232": {
+  "class_type": "HiDreamO1PatchSeamSmoothing",
+  "inputs": {
+   "start_percent": 0.8,
+   "end_percent": 1,
+   "pattern": "single_shift",
+   "passes": "ramp_2_4",
+   "blend": "median",
+   "strength": 1,
+   "model": [
+    "124",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "HiDreamO1PatchSeamSmoothing"
+  }
+ }
+}

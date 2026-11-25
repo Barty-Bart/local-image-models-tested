@@ -1,0 +1,182 @@
+{
+ "2": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen3vl_4b_int8_convrot.safetensors",
+   "type": "flux3",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "CLIPLoader"
+  }
+ },
+ "3": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "flux2-vae.safetensors"
+  },
+  "_meta": {
+   "title": "VAELoader"
+  }
+ },
+ "4": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "The man from image 1, wearing the hat from image 4, hiking in the mountains from image 3 with the cat from image 2 on his shoulder.",
+   "clip": [
+    "2",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Positive Prompt"
+  }
+ },
+ "7": {
+  "class_type": "KSampler",
+  "inputs": {
+   "seed": 2002,
+   "steps": 50,
+   "cfg": 1,
+   "sampler_name": "euler",
+   "scheduler": "simple",
+   "denoise": 1,
+   "model": [
+    "59",
+    0
+   ],
+   "positive": [
+    "17",
+    0
+   ],
+   "negative": [
+    "17",
+    1
+   ],
+   "latent_image": [
+    "17",
+    2
+   ]
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "8": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "7",
+    0
+   ],
+   "vae": [
+    "3",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAEDecode"
+  }
+ },
+ "9": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "filename_prefix": "vramtest/uncapped/flux3_image_klein_int8/M2_four_s2002",
+   "images": [
+    "8",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SaveImage"
+  }
+ },
+ "17": {
+  "class_type": "ReferenceMultiLatent",
+  "inputs": {
+   "resolution": "resize",
+   "resolution.megapixels": 1,
+   "positive": [
+    "4",
+    0
+   ],
+   "negative": [
+    "58",
+    0
+   ],
+   "vae": [
+    "3",
+    0
+   ],
+   "images.image0": [
+    "54",
+    0
+   ],
+   "images.image1": [
+    "902",
+    0
+   ],
+   "images.image2": [
+    "903",
+    0
+   ],
+   "images.image3": [
+    "904",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ReferenceMultiLatent"
+  }
+ },
+ "54": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "I1_person_s1001.png"
+  },
+  "_meta": {
+   "title": "LoadImage"
+  }
+ },
+ "58": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "",
+   "clip": [
+    "2",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Negative Prompt"
+  }
+ },
+ "59": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "flux3-image-klein-base-int8-convrot.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "UNETLoader"
+  }
+ },
+ "902": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "I2_cat_s1001.png"
+  }
+ },
+ "903": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "I3_mountain_s1001.png"
+  }
+ },
+ "904": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "I4_hat_s1001.png"
+  }
+ }
+}

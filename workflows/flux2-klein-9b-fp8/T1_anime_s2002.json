@@ -1,0 +1,176 @@
+{
+ "9": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "filename_prefix": "vramtest/uncapped/flux2_klein_9b_fp8/T1_anime_s2002",
+   "images": [
+    "75:65",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SaveImage"
+  }
+ },
+ "75:61": {
+  "class_type": "KSamplerSelect",
+  "inputs": {
+   "sampler_name": "euler"
+  },
+  "_meta": {
+   "title": "KSamplerSelect"
+  }
+ },
+ "75:62": {
+  "class_type": "Flux2Scheduler",
+  "inputs": {
+   "steps": 20,
+   "width": 1024,
+   "height": 1024
+  },
+  "_meta": {
+   "title": "Flux2Scheduler"
+  }
+ },
+ "75:63": {
+  "class_type": "CFGGuider",
+  "inputs": {
+   "cfg": 5,
+   "model": [
+    "75:70",
+    0
+   ],
+   "positive": [
+    "75:74",
+    0
+   ],
+   "negative": [
+    "75:67",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "CFGGuider"
+  }
+ },
+ "75:64": {
+  "class_type": "SamplerCustomAdvanced",
+  "inputs": {
+   "noise": [
+    "75:73",
+    0
+   ],
+   "guider": [
+    "75:63",
+    0
+   ],
+   "sampler": [
+    "75:61",
+    0
+   ],
+   "sigmas": [
+    "75:62",
+    0
+   ],
+   "latent_image": [
+    "75:66",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SamplerCustomAdvanced"
+  }
+ },
+ "75:65": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "75:64",
+    0
+   ],
+   "vae": [
+    "75:72",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAEDecode"
+  }
+ },
+ "75:66": {
+  "class_type": "EmptyFlux2LatentImage",
+  "inputs": {
+   "width": 1024,
+   "height": 1024,
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "EmptyFlux2LatentImage"
+  }
+ },
+ "75:67": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "",
+   "clip": [
+    "75:71",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "CLIP Text Encode (Negative Prompt)"
+  }
+ },
+ "75:73": {
+  "class_type": "RandomNoise",
+  "inputs": {
+   "noise_seed": 2002
+  },
+  "_meta": {
+   "title": "RandomNoise"
+  }
+ },
+ "75:70": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "flux-2-klein-base-9b-fp8.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "UNETLoader"
+  }
+ },
+ "75:71": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen_3_8b_fp8mixed.safetensors",
+   "type": "flux2",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "CLIPLoader"
+  }
+ },
+ "75:72": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "full_encoder_small_decoder.safetensors"
+  },
+  "_meta": {
+   "title": "VAELoader"
+  }
+ },
+ "75:74": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "Anime illustration of a girl with short blue hair riding a bicycle along a seaside road at sunset, cherry blossom petals in the air, clean cel shading.",
+   "clip": [
+    "75:71",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "CLIP Text Encode (Positive Prompt)"
+  }
+ }
+}

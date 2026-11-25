@@ -1,0 +1,195 @@
+{
+ "9": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "filename_prefix": "vramtest/uncapped/minimax_h3_image_int8/E1_beach_s1001",
+   "images": [
+    "42",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SaveImage"
+  }
+ },
+ "29": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "minimax_h3_image_pruned_int8_convrot.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "UNETLoader"
+  }
+ },
+ "30": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+   "type": "minimax",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "CLIPLoader"
+  }
+ },
+ "31": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "minimax_h3_image_vae_fp16.safetensors"
+  },
+  "_meta": {
+   "title": "VAELoader"
+  }
+ },
+ "32": {
+  "class_type": "MiniMaxH3ImageConditioning",
+  "inputs": {
+   "prompt": [
+    "43",
+    0
+   ],
+   "width": [
+    "50",
+    0
+   ],
+   "height": [
+    "50",
+    1
+   ],
+   "clip": [
+    "30",
+    0
+   ],
+   "vae": [
+    "31",
+    0
+   ],
+   "images.image_1": [
+    "48",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "MiniMaxH3ImageConditioning"
+  }
+ },
+ "33": {
+  "class_type": "ConditioningZeroOut",
+  "inputs": {
+   "conditioning": [
+    "32",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ConditioningZeroOut"
+  }
+ },
+ "38": {
+  "class_type": "KSampler",
+  "inputs": {
+   "seed": 1001,
+   "steps": 6,
+   "cfg": 1,
+   "sampler_name": "euler",
+   "scheduler": "simple",
+   "denoise": 1,
+   "model": [
+    "29",
+    0
+   ],
+   "positive": [
+    "32",
+    0
+   ],
+   "negative": [
+    "33",
+    0
+   ],
+   "latent_image": [
+    "32",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "42": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "38",
+    0
+   ],
+   "vae": [
+    "31",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAEDecode"
+  }
+ },
+ "43": {
+  "class_type": "PrimitiveStringMultiline",
+  "inputs": {
+   "value": "Replace the background with a sunny beach at golden hour. Keep the person exactly the same."
+  },
+  "_meta": {
+   "title": "Text (user_prompt)"
+  }
+ },
+ "45": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "I1_person_s1001.png"
+  },
+  "_meta": {
+   "title": "LoadImage"
+  }
+ },
+ "48": {
+  "class_type": "ResizeImageMaskNode",
+  "inputs": {
+   "resize_type": "scale to multiple",
+   "resize_type.multiple": 32,
+   "scale_method": "area",
+   "input": [
+    "56",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ResizeImageMaskNode"
+  }
+ },
+ "50": {
+  "class_type": "GetImageSize",
+  "inputs": {
+   "image": [
+    "48",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "GetImageSize"
+  }
+ },
+ "56": {
+  "class_type": "ResizeImageMaskNode",
+  "inputs": {
+   "resize_type": "scale total pixels",
+   "resize_type.megapixels": 1,
+   "scale_method": "area",
+   "input": [
+    "45",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ResizeImageMaskNode"
+  }
+ }
+}

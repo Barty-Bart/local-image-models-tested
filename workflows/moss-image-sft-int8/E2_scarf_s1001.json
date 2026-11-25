@@ -1,0 +1,220 @@
+{
+ "8": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "I2_cat_s1001.png"
+  },
+  "_meta": {
+   "title": "LoadImage"
+  }
+ },
+ "9": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "filename_prefix": "vramtest/uncapped/moss_image_sft_int8/E2_scarf_s1001",
+   "images": [
+    "38",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SaveImage"
+  }
+ },
+ "27": {
+  "class_type": "GetImageSize",
+  "inputs": {
+   "image": [
+    "29",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "GetImageSize"
+  }
+ },
+ "28": {
+  "class_type": "EmptyFlux2LatentImage",
+  "inputs": {
+   "width": [
+    "27",
+    0
+   ],
+   "height": [
+    "27",
+    1
+   ],
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "EmptyFlux2LatentImage"
+  }
+ },
+ "29": {
+  "class_type": "ImageScaleToTotalPixels",
+  "inputs": {
+   "upscale_method": "lanczos",
+   "megapixels": 1,
+   "resolution_steps": 16,
+   "image": [
+    "8",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Image Scale To Total Pixels (reference)"
+  }
+ },
+ "30": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "moss_image_sft_int8_convrot.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "UNETLoader"
+  }
+ },
+ "31": {
+  "class_type": "LoraLoaderModelOnly",
+  "inputs": {
+   "lora_name": "moss_image_edit_lora_rank_64_bf16.safetensors",
+   "strength_model": 1,
+   "model": [
+    "30",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "LoraLoaderModelOnly"
+  }
+ },
+ "32": {
+  "class_type": "SkipLayerGuidanceDiTSimple",
+  "inputs": {
+   "double_layers": "",
+   "single_layers": "22",
+   "start_percent": 0,
+   "end_percent": 1,
+   "model": [
+    "31",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SkipLayerGuidanceDiTSimple"
+  }
+ },
+ "33": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen3.5_9b_w4a8_gptq.safetensors",
+   "type": "moss_image",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "CLIPLoader"
+  }
+ },
+ "34": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "flux2-vae_small.safetensors"
+  },
+  "_meta": {
+   "title": "VAELoader"
+  }
+ },
+ "36": {
+  "class_type": "TextEncodeMOSSImageEdit",
+  "inputs": {
+   "prompt": "nsfw, worst quality, bad anatomy, watermark, jpeg artifact",
+   "edit_format": "Moss-Image-Edit",
+   "image_strength": 1,
+   "clip": [
+    "33",
+    0
+   ],
+   "images.image_0": [
+    "29",
+    0
+   ],
+   "vae": [
+    "34",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Text Encode MOSS-Image Edit (negative)"
+  }
+ },
+ "37": {
+  "class_type": "KSampler",
+  "inputs": {
+   "seed": 1001,
+   "steps": 30,
+   "cfg": 4,
+   "sampler_name": "euler",
+   "scheduler": "normal",
+   "denoise": 1,
+   "model": [
+    "32",
+    0
+   ],
+   "positive": [
+    "39",
+    0
+   ],
+   "negative": [
+    "36",
+    0
+   ],
+   "latent_image": [
+    "28",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "38": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "37",
+    0
+   ],
+   "vae": [
+    "34",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAEDecode"
+  }
+ },
+ "39": {
+  "class_type": "TextEncodeMOSSImageEdit",
+  "inputs": {
+   "prompt": "Make the cat wear a small red knitted scarf. Change nothing else.",
+   "edit_format": "Moss-Image-Edit",
+   "image_strength": 1,
+   "clip": [
+    "33",
+    0
+   ],
+   "images.image_0": [
+    "29",
+    0
+   ],
+   "vae": [
+    "34",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Text Encode MOSS-Image Edit (positive)"
+  }
+ }
+}

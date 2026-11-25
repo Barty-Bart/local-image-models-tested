@@ -1,0 +1,171 @@
+{
+ "9": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "filename_prefix": "vramtest/uncapped/flux2_dev_fp8mixed/T2_photo_s1001",
+   "images": [
+    "68:8",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SaveImage"
+  }
+ },
+ "68:48": {
+  "class_type": "Flux2Scheduler",
+  "inputs": {
+   "steps": 20,
+   "width": 1024,
+   "height": 1024
+  },
+  "_meta": {
+   "title": "Flux2Scheduler"
+  }
+ },
+ "68:22": {
+  "class_type": "BasicGuider",
+  "inputs": {
+   "model": [
+    "68:12",
+    0
+   ],
+   "conditioning": [
+    "68:26",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "BasicGuider"
+  }
+ },
+ "68:16": {
+  "class_type": "KSamplerSelect",
+  "inputs": {
+   "sampler_name": "euler"
+  },
+  "_meta": {
+   "title": "KSamplerSelect"
+  }
+ },
+ "68:10": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "full_encoder_small_decoder.safetensors"
+  },
+  "_meta": {
+   "title": "VAELoader"
+  }
+ },
+ "68:13": {
+  "class_type": "SamplerCustomAdvanced",
+  "inputs": {
+   "noise": [
+    "68:25",
+    0
+   ],
+   "guider": [
+    "68:22",
+    0
+   ],
+   "sampler": [
+    "68:16",
+    0
+   ],
+   "sigmas": [
+    "68:48",
+    0
+   ],
+   "latent_image": [
+    "68:47",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SamplerCustomAdvanced"
+  }
+ },
+ "68:6": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "Close-up portrait of a 70-year-old Caucasian woman laughing in light rain on a city street at night, wet hair, neon reflections, shot on an 85mm lens, shallow depth of field.",
+   "clip": [
+    "68:38",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "CLIP Text Encode (Positive Prompt)"
+  }
+ },
+ "68:38": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "mistral_3_small_flux2_bf16.safetensors",
+   "type": "flux2",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "CLIPLoader"
+  }
+ },
+ "68:25": {
+  "class_type": "RandomNoise",
+  "inputs": {
+   "noise_seed": 1001
+  },
+  "_meta": {
+   "title": "RandomNoise"
+  }
+ },
+ "68:8": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "68:13",
+    0
+   ],
+   "vae": [
+    "68:10",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAEDecode"
+  }
+ },
+ "68:26": {
+  "class_type": "FluxGuidance",
+  "inputs": {
+   "guidance": 4,
+   "conditioning": [
+    "68:6",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "FluxGuidance"
+  }
+ },
+ "68:12": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "flux2_dev_fp8mixed.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "UNETLoader"
+  }
+ },
+ "68:47": {
+  "class_type": "EmptyFlux2LatentImage",
+  "inputs": {
+   "width": 1024,
+   "height": 1024,
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "EmptyFlux2LatentImage"
+  }
+ }
+}

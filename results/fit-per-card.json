@@ -1,0 +1,696 @@
+{
+ "chroma1_hd_fp8": {
+  "files": 13.7,
+  "painter": 8.6,
+  "reader": 4.8,
+  "vae": 0.31,
+  "jobs": {
+   "t2i": {
+    "full": 16.1,
+    "swap": 11.3,
+    "fits": 24,
+    "swaps": 16,
+    "close": [
+     12
+    ],
+    "W": 2.4
+   }
+  }
+ },
+ "fibo2_edit_turbo_int8": {
+  "files": 16.4,
+  "painter": 7.8,
+  "reader": 8.3,
+  "vae": 0.31,
+  "jobs": {
+   "edit": {
+    "full": 18.4,
+    "swap": 10.1,
+    "fits": 24,
+    "swaps": 12,
+    "close": [
+     12
+    ],
+    "W": 2.0
+   },
+   "fuse2": {
+    "full": 18.9,
+    "swap": 10.6,
+    "fits": 24,
+    "swaps": 12,
+    "close": [
+     12
+    ],
+    "W": 2.5
+   },
+   "fuse4": {
+    "full": 20.4,
+    "swap": 12.1,
+    "fits": 24,
+    "swaps": 16,
+    "close": [],
+    "W": 4.0
+   }
+  }
+ },
+ "fibo2_edit_turbo_int8__with_rewriter": {
+  "files": 25.1,
+  "painter": 7.8,
+  "reader": 8.7,
+  "vae": 0.31,
+  "jobs": {
+   "edit": {
+    "full": 27.1,
+    "swap": 10.1,
+    "fits": 32,
+    "swaps": 12,
+    "close": [
+     12
+    ],
+    "W": 2.0
+   },
+   "fuse2": {
+    "full": 27.6,
+    "swap": 10.6,
+    "fits": 32,
+    "swaps": 12,
+    "close": [
+     12
+    ],
+    "W": 2.5
+   },
+   "fuse4": {
+    "full": 29.1,
+    "swap": 12.1,
+    "fits": 32,
+    "swaps": 16,
+    "close": [],
+    "W": 4.0
+   }
+  }
+ },
+ "flux2_dev_fp8mixed": {
+  "files": 66.4,
+  "painter": 33.0,
+  "reader": 33.1,
+  "vae": 0.23,
+  "jobs": {
+   "t2i": {
+    "full": 67.9,
+    "swap": 34.8,
+    "fits": 96,
+    "swaps": 48,
+    "close": [],
+    "W": 1.5
+   },
+   "edit": {
+    "full": 68.4,
+    "swap": 35.3,
+    "fits": 96,
+    "swaps": 48,
+    "close": [],
+    "W": 2.0
+   },
+   "fuse2": {
+    "full": 68.9,
+    "swap": 35.8,
+    "fits": 96,
+    "swaps": 48,
+    "close": [],
+    "W": 2.5
+   },
+   "fuse4": {
+    "full": 70.4,
+    "swap": 37.3,
+    "fits": 96,
+    "swaps": 48,
+    "close": [],
+    "W": 4.0
+   }
+  }
+ },
+ "flux2_klein_4b": {
+  "files": 15.0,
+  "painter": 7.2,
+  "reader": 7.5,
+  "vae": 0.31,
+  "jobs": {
+   "t2i": {
+    "full": 16.5,
+    "swap": 9.0,
+    "fits": 24,
+    "swaps": 12,
+    "close": [],
+    "W": 1.5
+   },
+   "edit": {
+    "full": 17.0,
+    "swap": 9.5,
+    "fits": 24,
+    "swaps": 12,
+    "close": [],
+    "W": 2.0
+   },
+   "fuse2": {
+    "full": 17.5,
+    "swap": 10.0,
+    "fits": 24,
+    "swaps": 12,
+    "close": [
+     12
+    ],
+    "W": 2.5
+   },
+   "fuse4": {
+    "full": 19.0,
+    "swap": 11.5,
+    "fits": 24,
+    "swaps": 16,
+    "close": [
+     12
+    ],
+    "W": 4.0
+   }
+  }
+ },
+ "flux2_klein_9b_fp8": {
+  "files": 17.2,
+  "painter": 8.9,
+  "reader": 8.1,
+  "vae": 0.23,
+  "jobs": {
+   "t2i": {
+    "full": 18.7,
+    "swap": 10.6,
+    "fits": 24,
+    "swaps": 12,
+    "close": [
+     12
+    ],
+    "W": 1.5
+   },
+   "edit": {
+    "full": 19.2,
+    "swap": 11.1,
+    "fits": 24,
+    "swaps": 16,
+    "close": [
+     12
+    ],
+    "W": 2.0
+   },
+   "fuse2": {
+    "full": 19.7,
+    "swap": 11.6,
+    "fits": 24,
+    "swaps": 16,
+    "close": [
+     12
+    ],
+    "W": 2.5
+   },
+   "fuse4": {
+    "full": 21.2,
+    "swap": 13.1,
+    "fits": 24,
+    "swaps": 16,
+    "close": [],
+    "W": 4.0
+   }
+  }
+ },
+ "flux3_image_klein_int8": {
+  "files": 10.2,
+  "painter": 5.4,
+  "reader": 4.5,
+  "vae": 0.31,
+  "jobs": {
+   "t2i": {
+    "full": 11.7,
+    "swap": 7.2,
+    "fits": 16,
+    "swaps": 8,
+    "close": [
+     12
+    ],
+    "W": 1.5,
+    "checked8": true
+   },
+   "edit": {
+    "full": 12.2,
+    "swap": 7.7,
+    "fits": 16,
+    "swaps": 8,
+    "close": [],
+    "W": 2.0,
+    "checked8": true
+   },
+   "fuse2": {
+    "full": 12.7,
+    "swap": 8.2,
+    "fits": 16,
+    "swaps": 12,
+    "close": [],
+    "W": 2.5
+   },
+   "fuse4": {
+    "full": 14.2,
+    "swap": 9.7,
+    "fits": 16,
+    "swaps": 12,
+    "close": [
+     16
+    ],
+    "W": 4.0
+   }
+  }
+ },
+ "hidream_o1_bf16": {
+  "files": 15.2,
+  "painter": 15.2,
+  "reader": 0,
+  "vae": 0,
+  "jobs": {
+   "t2i": {
+    "full": 16.7,
+    "swap": 16.7,
+    "fits": 24,
+    "swaps": 24,
+    "close": [],
+    "W": 1.5
+   },
+   "edit": {
+    "full": 17.2,
+    "swap": 17.2,
+    "fits": 24,
+    "swaps": 24,
+    "close": [],
+    "W": 2.0
+   },
+   "fuse2": {
+    "full": 17.7,
+    "swap": 17.7,
+    "fits": 24,
+    "swaps": 24,
+    "close": [],
+    "W": 2.5
+   },
+   "fuse4": {
+    "full": 19.2,
+    "swap": 19.2,
+    "fits": 24,
+    "swaps": 24,
+    "close": [],
+    "W": 4.0
+   }
+  }
+ },
+ "illustrious_xl_v2_sdxl": {
+  "files": 6.5,
+  "painter": 4.8,
+  "reader": 1.5,
+  "vae": 0.16,
+  "jobs": {
+   "t2i": {
+    "full": 9.3,
+    "swap": 7.8,
+    "fits": 12,
+    "swaps": 8,
+    "close": [],
+    "W": 2.8,
+    "checked8": true
+   }
+  }
+ },
+ "krea2_turbo_fp8": {
+  "files": 17.4,
+  "painter": 12.2,
+  "reader": 4.9,
+  "vae": 0.24,
+  "jobs": {
+   "t2i": {
+    "full": 18.9,
+    "swap": 14.0,
+    "fits": 24,
+    "swaps": 16,
+    "close": [],
+    "W": 1.5
+   }
+  }
+ },
+ "longcat_image_edit_bf16": {
+  "files": 20.7,
+  "painter": 11.7,
+  "reader": 8.7,
+  "vae": 0.31,
+  "jobs": {
+   "edit": {
+    "full": 22.7,
+    "swap": 14.0,
+    "fits": 24,
+    "swaps": 16,
+    "close": [
+     24
+    ],
+    "W": 2.0
+   }
+  }
+ },
+ "ming_image_0.1_design_int8": {
+  "files": 24.2,
+  "painter": 5.8,
+  "reader": 18.2,
+  "vae": 0.24,
+  "jobs": {
+   "t2i": {
+    "full": 25.9,
+    "swap": 18.7,
+    "fits": 32,
+    "swaps": 24,
+    "close": [],
+    "W": 1.7
+   }
+  }
+ },
+ "minimax_h3_image_int8": {
+  "files": 45.9,
+  "painter": 19.5,
+  "reader": 25.3,
+  "vae": 1.09,
+  "jobs": {
+   "t2i": {
+    "full": 47.4,
+    "swap": 25.8,
+    "fits": 96,
+    "swaps": 32,
+    "close": [
+     48
+    ],
+    "W": 1.5
+   },
+   "edit": {
+    "full": 47.9,
+    "swap": 25.8,
+    "fits": 96,
+    "swaps": 32,
+    "close": [
+     48
+    ],
+    "W": 2.0
+   },
+   "fuse2": {
+    "full": 48.4,
+    "swap": 25.8,
+    "fits": 96,
+    "swaps": 32,
+    "close": [],
+    "W": 2.5
+   },
+   "fuse4": {
+    "full": 49.9,
+    "swap": 25.8,
+    "fits": 96,
+    "swaps": 32,
+    "close": [],
+    "W": 4.0
+   }
+  }
+ },
+ "minimax_h3_image_int8__reader_nvfp4": {
+  "files": 35.2,
+  "painter": 19.5,
+  "reader": 14.6,
+  "vae": 1.09,
+  "jobs": {
+   "t2i": {
+    "full": 36.7,
+    "swap": 22.1,
+    "fits": 48,
+    "swaps": 24,
+    "close": [
+     24
+    ],
+    "W": 1.5
+   },
+   "edit": {
+    "full": 37.2,
+    "swap": 22.6,
+    "fits": 48,
+    "swaps": 24,
+    "close": [
+     24
+    ],
+    "W": 2.0
+   },
+   "fuse2": {
+    "full": 37.7,
+    "swap": 23.1,
+    "fits": 48,
+    "swaps": 32,
+    "close": [
+     24
+    ],
+    "W": 2.5
+   },
+   "fuse4": {
+    "full": 39.2,
+    "swap": 24.6,
+    "fits": 48,
+    "swaps": 32,
+    "close": [],
+    "W": 4.0
+   }
+  }
+ },
+ "moss_image_sft_int8": {
+  "files": 12.4,
+  "painter": 5.3,
+  "reader": 6.8,
+  "vae": 0.23,
+  "jobs": {
+   "t2i": {
+    "full": 13.9,
+    "swap": 7.3,
+    "fits": 16,
+    "swaps": 8,
+    "close": [],
+    "W": 1.5,
+    "checked8": true
+   },
+   "edit": {
+    "full": 14.5,
+    "swap": 7.7,
+    "fits": 16,
+    "swaps": 8,
+    "close": [
+     16
+    ],
+    "W": 2.1,
+    "checked8": true
+   },
+   "fuse2": {
+    "full": 18.8,
+    "swap": 12.0,
+    "fits": 24,
+    "swaps": 16,
+    "close": [],
+    "W": 6.4
+   },
+   "fuse4": {
+    "full": 27.6,
+    "swap": 20.8,
+    "fits": 32,
+    "swaps": 24,
+    "close": [],
+    "W": 15.2
+   }
+  }
+ },
+ "qwen_image_2.1_int8": {
+  "files": 16.1,
+  "painter": 6.8,
+  "reader": 8.7,
+  "vae": 0.63,
+  "jobs": {
+   "t2i": {
+    "full": 17.6,
+    "swap": 9.2,
+    "fits": 24,
+    "swaps": 12,
+    "close": [],
+    "W": 1.5
+   },
+   "edit": {
+    "full": 18.9,
+    "swap": 10.2,
+    "fits": 24,
+    "swaps": 12,
+    "close": [
+     12
+    ],
+    "W": 2.8
+   },
+   "fuse2": {
+    "full": 20.8,
+    "swap": 12.1,
+    "fits": 24,
+    "swaps": 16,
+    "close": [],
+    "W": 4.7
+   },
+   "fuse4": {
+    "full": 26.2,
+    "swap": 17.5,
+    "fits": 32,
+    "swaps": 24,
+    "close": [],
+    "W": 10.2
+   }
+  }
+ },
+ "qwen_image_2512_fp8": {
+  "files": 28.0,
+  "painter": 19.0,
+  "reader": 8.7,
+  "vae": 0.24,
+  "jobs": {
+   "t2i": {
+    "full": 29.5,
+    "swap": 20.8,
+    "fits": 32,
+    "swaps": 24,
+    "close": [],
+    "W": 1.5
+   }
+  }
+ },
+ "qwen_image_2512_fp8__lightning4": {
+  "files": 29.6,
+  "painter": 20.6,
+  "reader": 8.7,
+  "vae": 0.24,
+  "jobs": {
+   "t2i": {
+    "full": 31.1,
+    "swap": 22.3,
+    "fits": 48,
+    "swaps": 24,
+    "close": [
+     24,
+     32
+    ],
+    "W": 1.5
+   }
+  }
+ },
+ "qwen_image_edit_2511_fp8mixed": {
+  "files": 28.1,
+  "painter": 19.1,
+  "reader": 8.7,
+  "vae": 0.24,
+  "jobs": {
+   "edit": {
+    "full": 30.1,
+    "swap": 21.4,
+    "fits": 32,
+    "swaps": 24,
+    "close": [
+     32
+    ],
+    "W": 2.0
+   },
+   "fuse2": {
+    "full": 30.6,
+    "swap": 21.9,
+    "fits": 32,
+    "swaps": 24,
+    "close": [
+     32
+    ],
+    "W": 2.5
+   }
+  }
+ },
+ "qwen_image_edit_2511_fp8mixed__lightning4": {
+  "files": 28.9,
+  "painter": 19.9,
+  "reader": 8.7,
+  "vae": 0.24,
+  "jobs": {
+   "edit": {
+    "full": 30.9,
+    "swap": 22.2,
+    "fits": 32,
+    "swaps": 24,
+    "close": [
+     24,
+     32
+    ],
+    "W": 2.0
+   },
+   "fuse2": {
+    "full": 31.4,
+    "swap": 22.7,
+    "fits": 48,
+    "swaps": 24,
+    "close": [
+     24,
+     32
+    ],
+    "W": 2.5
+   }
+  }
+ },
+ "realvisxl_v5_sdxl_fp16": {
+  "files": 6.5,
+  "painter": 4.8,
+  "reader": 1.5,
+  "vae": 0.16,
+  "jobs": {
+   "t2i": {
+    "full": 9.3,
+    "swap": 7.8,
+    "fits": 12,
+    "swaps": 8,
+    "close": [],
+    "W": 2.8,
+    "checked8": true
+   }
+  }
+ },
+ "sdxl_1.0_fp16": {
+  "files": 6.5,
+  "painter": 4.8,
+  "reader": 1.5,
+  "vae": 0.16,
+  "jobs": {
+   "t2i": {
+    "full": 9.3,
+    "swap": 7.8,
+    "fits": 12,
+    "swaps": 8,
+    "close": [],
+    "W": 2.8,
+    "checked8": true
+   }
+  }
+ },
+ "z_image_turbo_bf16": {
+  "files": 19.3,
+  "painter": 11.5,
+  "reader": 7.5,
+  "vae": 0.31,
+  "jobs": {
+   "t2i": {
+    "full": 21.9,
+    "swap": 14.4,
+    "fits": 24,
+    "swaps": 16,
+    "close": [
+     16
+    ],
+    "W": 2.7
+   }
+  }
+ }
+}

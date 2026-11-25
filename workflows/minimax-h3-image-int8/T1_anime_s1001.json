@@ -1,0 +1,139 @@
+{
+ "9": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "filename_prefix": "vramtest/uncapped/minimax_h3_image_int8/T1_anime_s1001",
+   "images": [
+    "23:8",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SaveImage"
+  }
+ },
+ "14": {
+  "class_type": "ResolutionSelector",
+  "inputs": {
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 1,
+   "multiple": 32
+  },
+  "_meta": {
+   "title": "ResolutionSelector"
+  }
+ },
+ "23:1": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "minimax_h3_image_pruned_int8_convrot.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "UNETLoader"
+  }
+ },
+ "23:2": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+   "type": "minimax",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "CLIPLoader"
+  }
+ },
+ "23:3": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "minimax_h3_image_vae_fp16.safetensors"
+  },
+  "_meta": {
+   "title": "VAELoader"
+  }
+ },
+ "23:5": {
+  "class_type": "MiniMaxH3ImageConditioning",
+  "inputs": {
+   "prompt": "Anime illustration of a girl with short blue hair riding a bicycle along a seaside road at sunset, cherry blossom petals in the air, clean cel shading.",
+   "width": [
+    "14",
+    0
+   ],
+   "height": [
+    "14",
+    1
+   ],
+   "clip": [
+    "23:2",
+    0
+   ],
+   "vae": [
+    "23:3",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "MiniMaxH3ImageConditioning"
+  }
+ },
+ "23:6": {
+  "class_type": "ConditioningZeroOut",
+  "inputs": {
+   "conditioning": [
+    "23:5",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ConditioningZeroOut"
+  }
+ },
+ "23:7": {
+  "class_type": "KSampler",
+  "inputs": {
+   "seed": 1001,
+   "steps": 6,
+   "cfg": 1,
+   "sampler_name": "euler",
+   "scheduler": "simple",
+   "denoise": 1,
+   "model": [
+    "23:1",
+    0
+   ],
+   "positive": [
+    "23:5",
+    0
+   ],
+   "negative": [
+    "23:6",
+    0
+   ],
+   "latent_image": [
+    "23:5",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "23:8": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "23:7",
+    0
+   ],
+   "vae": [
+    "23:3",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAEDecode"
+  }
+ }
+}

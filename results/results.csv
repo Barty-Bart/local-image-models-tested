@@ -1,0 +1,107 @@
+model,build,job,case,seconds,peak_gpu_gb
+Chroma1-HD (fp8),chroma1_hd_fp8,New picture,T1_anime,49.3,15.5
+Chroma1-HD (fp8),chroma1_hd_fp8,New picture,T2_photo,44.9,15.6
+Chroma1-HD (fp8),chroma1_hd_fp8,New picture,T3_design,44.9,15.6
+Fibo 2.0 Edit (int8),fibo2_edit_turbo_int8,Edit,E1_beach,16.8,17.7
+Fibo 2.0 Edit (int8),fibo2_edit_turbo_int8,Edit,E2_scarf,12.6,17.7
+Fibo 2.0 Edit (int8),fibo2_edit_turbo_int8,Fuse,M1_cat_mountain,19.9,18.3
+Fibo 2.0 Edit (int8),fibo2_edit_turbo_int8,Fuse,M2_four,39.8,19.8
+Fibo 2.0 Edit + its rewriter,fibo2_edit_turbo_int8__with_rewriter,Edit,E1_beach,54.5,26.4
+Fibo 2.0 Edit + its rewriter,fibo2_edit_turbo_int8__with_rewriter,Edit,E2_scarf,44.7,26.6
+Fibo 2.0 Edit + its rewriter,fibo2_edit_turbo_int8__with_rewriter,Fuse,M1_cat_mountain,61.6,27.4
+Fibo 2.0 Edit + its rewriter,fibo2_edit_turbo_int8__with_rewriter,Fuse,M2_four,126.5,29.0
+FLUX.2 dev (fp8),flux2_dev_fp8mixed,Edit,E1_beach,138.9,67.7
+FLUX.2 dev (fp8),flux2_dev_fp8mixed,Edit,E2_scarf,121.5,67.4
+FLUX.2 dev (fp8),flux2_dev_fp8mixed,Fuse,M1_cat_mountain,199.0,68.4
+FLUX.2 dev (fp8),flux2_dev_fp8mixed,Fuse,M2_four,393.5,70.3
+FLUX.2 dev (fp8),flux2_dev_fp8mixed,New picture,T1_anime,78.7,66.5
+FLUX.2 dev (fp8),flux2_dev_fp8mixed,New picture,T2_photo,58.4,66.5
+FLUX.2 dev (fp8),flux2_dev_fp8mixed,New picture,T3_design,58.4,66.5
+FLUX.2 klein 4B,flux2_klein_4b,Edit,E1_beach,9.3,12.6
+FLUX.2 klein 4B,flux2_klein_4b,Edit,E2_scarf,5.8,12.6
+FLUX.2 klein 4B,flux2_klein_4b,Fuse,M1_cat_mountain,8.5,13.1
+FLUX.2 klein 4B,flux2_klein_4b,Fuse,M2_four,16.1,14.2
+FLUX.2 klein 4B,flux2_klein_4b,New picture,T1_anime,30.5,15.6
+FLUX.2 klein 4B,flux2_klein_4b,New picture,T2_photo,25.0,15.8
+FLUX.2 klein 4B,flux2_klein_4b,New picture,T3_design,24.8,15.8
+FLUX.2 klein 9B (fp8),flux2_klein_9b_fp8,Edit,E1_beach,13.6,18.2
+FLUX.2 klein 9B (fp8),flux2_klein_9b_fp8,Edit,E2_scarf,9.0,18.1
+FLUX.2 klein 9B (fp8),flux2_klein_9b_fp8,Fuse,M1_cat_mountain,14.0,18.7
+FLUX.2 klein 9B (fp8),flux2_klein_9b_fp8,Fuse,M2_four,26.7,20.4
+FLUX.2 klein 9B (fp8),flux2_klein_9b_fp8,New picture,T1_anime,39.5,18.3
+FLUX.2 klein 9B (fp8),flux2_klein_9b_fp8,New picture,T2_photo,34.7,18.5
+FLUX.2 klein 9B (fp8),flux2_klein_9b_fp8,New picture,T3_design,34.7,18.3
+FLUX 3 Klein (int8),flux3_image_klein_int8,Edit,E1_beach,60.6,10.2
+FLUX 3 Klein (int8),flux3_image_klein_int8,Edit,E2_scarf,57.0,10.3
+FLUX 3 Klein (int8),flux3_image_klein_int8,Fuse,M1_cat_mountain,94.2,10.9
+FLUX 3 Klein (int8),flux3_image_klein_int8,Fuse,M2_four,190.4,12.2
+FLUX 3 Klein (int8),flux3_image_klein_int8,New picture,T1_anime,60.0,9.4
+FLUX 3 Klein (int8),flux3_image_klein_int8,New picture,T2_photo,56.5,9.6
+FLUX 3 Klein (int8),flux3_image_klein_int8,New picture,T3_design,56.7,9.6
+HiDream-O1,hidream_o1_bf16,Edit,E1_beach,82.2,16.2
+HiDream-O1,hidream_o1_bf16,Edit,E2_scarf,78.3,16.2
+HiDream-O1,hidream_o1_bf16,Fuse,M1_cat_mountain,85.9,16.4
+HiDream-O1,hidream_o1_bf16,Fuse,M2_four,88.8,16.6
+HiDream-O1,hidream_o1_bf16,New picture,T1_anime,31.9,15.2
+HiDream-O1,hidream_o1_bf16,New picture,T2_photo,28.6,15.2
+HiDream-O1,hidream_o1_bf16,New picture,T3_design,28.6,15.2
+"Illustrious XL 2.0 (SDXL, anime)",illustrious_xl_v2_sdxl,New picture,T1_anime,14.8,8.5
+"Illustrious XL 2.0 (SDXL, anime)",illustrious_xl_v2_sdxl,New picture,T2_photo,8.9,8.5
+"Illustrious XL 2.0 (SDXL, anime)",illustrious_xl_v2_sdxl,New picture,T3_design,8.7,8.5
+Krea 2 Turbo (fp8),krea2_turbo_fp8,New picture,T1_anime,19.3,17.5
+Krea 2 Turbo (fp8),krea2_turbo_fp8,New picture,T2_photo,14.4,18.0
+Krea 2 Turbo (fp8),krea2_turbo_fp8,New picture,T3_design,14.5,18.0
+LongCat Image Edit,longcat_image_edit_bf16,Edit,E1_beach,182.3,22.0
+LongCat Image Edit,longcat_image_edit_bf16,Edit,E2_scarf,178.3,21.6
+Ming-Image 0.1 Design (int8),ming_image_0.1_design_int8,New picture,T1_anime,18.6,23.2
+Ming-Image 0.1 Design (int8),ming_image_0.1_design_int8,New picture,T2_photo,11.6,25.9
+Ming-Image 0.1 Design (int8),ming_image_0.1_design_int8,New picture,T3_design,11.6,25.8
+"MiniMax H3-Image (int8, int8 reader)",minimax_h3_image_int8,Edit,E1_beach,27.8,45.7
+"MiniMax H3-Image (int8, int8 reader)",minimax_h3_image_int8,Edit,E2_scarf,17.0,47.2
+"MiniMax H3-Image (int8, int8 reader)",minimax_h3_image_int8,Fuse,M1_cat_mountain,44.5,47.9
+"MiniMax H3-Image (int8, int8 reader)",minimax_h3_image_int8,Fuse,M2_four,77.9,48.5
+"MiniMax H3-Image (int8, int8 reader)",minimax_h3_image_int8,New picture,T1_anime,18.8,44.4
+"MiniMax H3-Image (int8, int8 reader)",minimax_h3_image_int8,New picture,T2_photo,5.1,45.6
+"MiniMax H3-Image (int8, int8 reader)",minimax_h3_image_int8,New picture,T3_design,4.8,45.6
+"MiniMax H3-Image (int8, 4-bit reader)",minimax_h3_image_int8__reader_nvfp4,Edit,E1_beach,29.9,35.1
+"MiniMax H3-Image (int8, 4-bit reader)",minimax_h3_image_int8__reader_nvfp4,Edit,E2_scarf,16.6,36.0
+"MiniMax H3-Image (int8, 4-bit reader)",minimax_h3_image_int8__reader_nvfp4,Fuse,M1_cat_mountain,44.3,36.8
+"MiniMax H3-Image (int8, 4-bit reader)",minimax_h3_image_int8__reader_nvfp4,Fuse,M2_four,78.1,37.5
+"MiniMax H3-Image (int8, 4-bit reader)",minimax_h3_image_int8__reader_nvfp4,New picture,T1_anime,21.0,33.7
+"MiniMax H3-Image (int8, 4-bit reader)",minimax_h3_image_int8__reader_nvfp4,New picture,T2_photo,4.6,34.5
+"MiniMax H3-Image (int8, 4-bit reader)",minimax_h3_image_int8__reader_nvfp4,New picture,T3_design,4.5,34.5
+MOSS-Image (int8),moss_image_sft_int8,Edit,E1_beach,50.3,13.9
+MOSS-Image (int8),moss_image_sft_int8,Edit,E2_scarf,44.3,13.9
+MOSS-Image (int8),moss_image_sft_int8,Fuse,M1_cat_mountain,52.9,18.2
+MOSS-Image (int8),moss_image_sft_int8,Fuse,M2_four,72.0,26.9
+MOSS-Image (int8),moss_image_sft_int8,New picture,T1_anime,35.9,9.9
+MOSS-Image (int8),moss_image_sft_int8,New picture,T2_photo,28.1,10.1
+MOSS-Image (int8),moss_image_sft_int8,New picture,T3_design,28.0,9.9
+Qwen-Image 2.1 (int8),qwen_image_2.1_int8,Edit,E1_beach,31.5,18.3
+Qwen-Image 2.1 (int8),qwen_image_2.1_int8,Edit,E2_scarf,31.1,18.3
+Qwen-Image 2.1 (int8),qwen_image_2.1_int8,Fuse,M1_cat_mountain,43.2,20.7
+Qwen-Image 2.1 (int8),qwen_image_2.1_int8,Fuse,M2_four,66.7,25.7
+Qwen-Image 2.1 (int8),qwen_image_2.1_int8,New picture,T1_anime,27.2,15.7
+Qwen-Image 2.1 (int8),qwen_image_2.1_int8,New picture,T2_photo,22.1,15.7
+Qwen-Image 2.1 (int8),qwen_image_2.1_int8,New picture,T3_design,22.1,15.7
+"Qwen-Image 2512 (fp8, template 50 steps)",qwen_image_2512_fp8,New picture,T1_anime,166.7,27.5
+"Qwen-Image 2512 (fp8, template 50 steps)",qwen_image_2512_fp8,New picture,T2_photo,158.0,27.7
+"Qwen-Image 2512 (fp8, template 50 steps)",qwen_image_2512_fp8,New picture,T3_design,158.3,27.7
+"Qwen-Image 2512 (fp8, Lightning 4 steps)",qwen_image_2512_fp8__lightning4,New picture,T1_anime,19.6,27.3
+"Qwen-Image 2512 (fp8, Lightning 4 steps)",qwen_image_2512_fp8__lightning4,New picture,T2_photo,7.7,27.9
+"Qwen-Image 2512 (fp8, Lightning 4 steps)",qwen_image_2512_fp8__lightning4,New picture,T3_design,7.7,27.9
+"Qwen-Image-Edit 2511 (fp8, template steps)",qwen_image_edit_2511_fp8mixed,Edit,E1_beach,269.0,28.5
+"Qwen-Image-Edit 2511 (fp8, template steps)",qwen_image_edit_2511_fp8mixed,Edit,E2_scarf,265.8,28.6
+"Qwen-Image-Edit 2511 (fp8, template steps)",qwen_image_edit_2511_fp8mixed,Fuse,M1_cat_mountain,429.2,28.6
+"Qwen-Image-Edit 2511 (fp8, Lightning 4 steps)",qwen_image_edit_2511_fp8mixed__lightning4,Edit,E1_beach,28.0,28.0
+"Qwen-Image-Edit 2511 (fp8, Lightning 4 steps)",qwen_image_edit_2511_fp8mixed__lightning4,Edit,E2_scarf,16.7,28.6
+"Qwen-Image-Edit 2511 (fp8, Lightning 4 steps)",qwen_image_edit_2511_fp8mixed__lightning4,Fuse,M1_cat_mountain,25.6,28.6
+"RealVisXL 5.0 (SDXL, realistic)",realvisxl_v5_sdxl_fp16,New picture,T1_anime,14.7,8.5
+"RealVisXL 5.0 (SDXL, realistic)",realvisxl_v5_sdxl_fp16,New picture,T2_photo,8.8,8.7
+"RealVisXL 5.0 (SDXL, realistic)",realvisxl_v5_sdxl_fp16,New picture,T3_design,8.8,9.2
+SDXL 1.0,sdxl_1.0_fp16,New picture,T1_anime,13.6,8.5
+SDXL 1.0,sdxl_1.0_fp16,New picture,T2_photo,8.7,9.2
+SDXL 1.0,sdxl_1.0_fp16,New picture,T3_design,8.8,8.7
+Z-Image Turbo,z_image_turbo_bf16,New picture,T1_anime,16.7,21.7
+Z-Image Turbo,z_image_turbo_bf16,New picture,T2_photo,8.3,21.3
+Z-Image Turbo,z_image_turbo_bf16,New picture,T3_design,8.2,21.3

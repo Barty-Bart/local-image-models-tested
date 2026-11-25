@@ -1,0 +1,47 @@
+{
+ "_note": "Locked prompts, test-spec-v2.md §2-3. 22 Nov 2026 change (Bart): people prompts now state ethnicity, varied across prompts, after the Chinese models defaulted to East Asian faces. 23 Nov 2026 (Bart): 'I want them for caucasian'; T2 changed from a Black woman to a Caucasian woman and re-run for every model; the earlier T2 images are kept in results/images/_t2_black_woman_22nov/.",
+ "inputs": {
+  "I1_person": "Photo of a Caucasian man in his thirties from the waist up, his whole face clearly visible and looking at the camera, wearing a plain grey jumper, holding a white mug, standing against a plain light wall, soft daylight.",
+  "I2_cat": "A ginger cat sitting upright, facing the camera, plain white background, studio photo.",
+  "I3_mountain": "A wide alpine mountain valley with a large flat rock in the foreground, clear morning light, photo.",
+  "I4_hat": "A straw sun hat on a plain white background, product photo.",
+  "I5_shop": "A small street shop front with a blank wooden sign above the door, daytime, photo."
+ },
+ "t2i": {
+  "T1_anime": "Anime illustration of a girl with short blue hair riding a bicycle along a seaside road at sunset, cherry blossom petals in the air, clean cel shading.",
+  "T2_photo": "Close-up portrait of a 70-year-old Caucasian woman laughing in light rain on a city street at night, wet hair, neon reflections, shot on an 85mm lens, shallow depth of field.",
+  "T3_design": "A minimalist concert poster: the title 'NIGHT SIGNAL' in large bold letters at the top, 'LIVE · 14 MARCH' in smaller letters below it, a single orange circle in the centre, off-white paper background."
+ },
+ "edit": {
+  "E1_beach": {
+   "images": [
+    "I1_person"
+   ],
+   "prompt": "Replace the background with a sunny beach at golden hour. Keep the person exactly the same."
+  },
+  "E2_scarf": {
+   "images": [
+    "I2_cat"
+   ],
+   "prompt": "Make the cat wear a small red knitted scarf. Change nothing else."
+  }
+ },
+ "fuse": {
+  "M1_cat_mountain": {
+   "images": [
+    "I2_cat",
+    "I3_mountain"
+   ],
+   "prompt": "Put the cat from image 1 sitting on the rock in the mountain valley from image 2."
+  },
+  "M2_four": {
+   "images": [
+    "I1_person",
+    "I2_cat",
+    "I3_mountain",
+    "I4_hat"
+   ],
+   "prompt": "The man from image 1, wearing the hat from image 4, hiking in the mountains from image 3 with the cat from image 2 on his shoulder."
+  }
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "1": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "fibo2_edit_turbo_int8_convrot.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "UNETLoader"
+  }
+ },
+ "2": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen3vl_4b_bf16.safetensors",
+   "type": "fibo2",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "CLIPLoader"
+  }
+ },
+ "3": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "flux2-vae.safetensors"
+  },
+  "_meta": {
+   "title": "VAELoader"
+  }
+ },
+ "4": {
+  "class_type": "TextEncodeFibo2",
+  "inputs": {
+   "prompt": "Put the cat from image 1 sitting on the rock in the mountain valley from image 2.",
+   "negative_prompt": "",
+   "width": 0,
+   "height": 0,
+   "batch_size": 1,
+   "clip": [
+    "2",
+    0
+   ],
+   "images.image_1": [
+    "10",
+    0
+   ],
+   "vae": [
+    "3",
+    0
+   ],
+   "images.image_2": [
+    "902",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "TextEncodeFibo2"
+  }
+ },
+ "5": {
+  "class_type": "KSampler",
+  "inputs": {
+   "seed": 2002,
+   "steps": 4,
+   "cfg": 1,
+   "sampler_name": "euler",
+   "scheduler": "simple",
+   "denoise": 1,
+   "model": [
+    "1",
+    0
+   ],
+   "positive": [
+    "4",
+    0
+   ],
+   "negative": [
+    "4",
+    1
+   ],
+   "latent_image": [
+    "4",
+    2
+   ]
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "6": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "5",
+    0
+   ],
+   "vae": [
+    "3",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAEDecode"
+  }
+ },
+ "7": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "filename_prefix": "vramtest/uncapped/fibo2_edit_turbo_int8/M1_cat_mountain_s2002",
+   "images": [
+    "6",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SaveImage"
+  }
+ },
+ "10": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "I2_cat_s1001.png"
+  },
+  "_meta": {
+   "title": "Load Image (source)"
+  }
+ },
+ "902": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "I3_mountain_s1001.png"
+  }
+ }
+}
